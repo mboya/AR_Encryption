@@ -28,5 +28,9 @@ module ArEncryption
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    config.active_record.encryption.primary_key = ENV['primary_key']
+    config.active_record.encryption.deterministic_key = ENV['deterministic_key']
+    config.active_record.encryption.key_derivation_salt = ENV['key_derivation_salt']
   end
 end
